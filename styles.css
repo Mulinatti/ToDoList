@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #ececec;
+    background-color: #eeeeee;
 }
 
 header {
@@ -32,13 +32,14 @@ fieldset {
     background-color: #fff;
     padding: 10px;
     border-radius: 10px;
+    box-shadow: 3px 2px 2px #bdbdbd;
 }
 
 .todo-input {
 
     outline: none;
     border: none;
-    background-color: #ececec;
+    background-color: #eeeeee;
     border-radius: 7px;
     width: 60%;
     height: 32px;
@@ -47,7 +48,7 @@ fieldset {
 
 .time-input {
 
-    background-color: #ececec;
+    background-color: #eeeeee;
     border: none;
     padding: 0 10px;
     border-radius: 5px;
@@ -55,7 +56,7 @@ fieldset {
 
 .date {
 
-    background-color: #ececec;
+    background-color: #eeeeee;
     border: none;
     padding: 0 10px;
     border-radius: 5px;
@@ -68,10 +69,74 @@ fieldset {
 
 .add-button {
 
-    background-color: #79d64e;
-    border: 2px solid #468b26;
-    width: 32px;
+    background-color: #64cc34;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 1px #dfdfdf;
+}
+
+article {
+
+    margin-top: 1.5rem;
+    background-color: #fff;
     border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 3px 2px 2px #bdbdbd;
+    animation: fromLeft 1s .3s backwards;
+}
+
+.horario {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 190px;
+    border-bottom: 1px solid #ececec;
+}
+
+.remove-button  {
+
+    width: 30px;
+    height: 30px;
+    background-color: #db4e4e;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 1px #dfdfdf;
     cursor: pointer;
 }
 
+article > p {
+
+    width: 60%;
+    overflow: hidden;
+    border-bottom: 1px solid #ececec;
+}
+
+p i{
+
+    text-align: center;
+    margin-left: 7px;
+}
+
+
+@keyframes fromLeft {
+
+    from {
+
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

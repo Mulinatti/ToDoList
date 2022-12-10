@@ -17,12 +17,22 @@
     </header>
     <main>
         <section>
-            <fieldset>
-                <input id="todo-text" class="todo-input" type="text">
-                <input id="date" class="date" type="date">
-                <input id="schedule" class="time-input" type="time">
-                <button id="add-btn" class="add-button"><i class="fa-solid fa-plus"></i></button>
-            </fieldset>
+            <form>
+                <fieldset>
+                    <input id="todo-text" class="todo-input" type="text">
+                    <input id="date" class="date" type="date">
+                    <input id="schedule" class="time-input" type="time">
+                    <button id="add-btn" class="add-button"><i class="fa-solid fa-plus"></i></button>
+                </fieldset>
+            </form>
+            <article id="note">
+                <p id="description">Preparar a marmita</p>
+                <div class="horario">
+                    <p id="data">09-12-2022<i class="fa-solid fa-calendar"></i></p>
+                    <p id="data-horario">18:30<i class="fa-solid fa-clock"></i></p>
+                </div>
+                <button class="remove-button" id="rmv-btn"><i class="fa-solid fa-trash"></i></button>
+            </article>
         </section>
     </main>
     <script src="script.js"></script>

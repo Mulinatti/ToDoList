@@ -2,16 +2,72 @@ const toDoText = document.querySelector("#todo-text");
 const schedule = document.querySelector("#schedule");
 const addButton = document.querySelector("#add-btn");
 const actualData = document.querySelector("#date");
+const section = document.querySelector("section");
+const form = document.querySelector("form");
 
-addButton.addEventListener("click", () => {
+addButton.addEventListener("click", (e) => {
 
-    const time1 = new Date()
-    const time2 = time1.getUTCHours();
+    e.preventDefault();
+    createArticle(toDoText.value, actualData.value, schedule.value);
+    form.reset();
+});
 
-    const time3 = "8:25:30";
+function createArticle(texto, date, hour) {
 
-    if(time3 > time2) console.log('maior');
-    else console.log("meno");
+    const article = document.createElement("article");
+    section.appendChild(article);
 
-    console.log(time2);
-})
+    const articleElements = {
+
+        description: document.createElement("p"),
+        horario: document.createElement("div"),
+        removeBtn: document.createElement("button"),
+    }
+
+    addElement(article, articleElements.description);
+    addElement(article, articleElements.horario, "horario");
+    addElement(article, articleElements.removeBtn);
+
+    articleElements.description.textContent = texto;
+
+    createSchedule(date, hour);
+    createButton();
+
+    function createSchedule(date, hour) {
+
+        const div = articleElements.horario;
+        const pData = document.createElement("p");
+        const pHora = document.createElement("p");
+        const iconData = document.createElement("i");
+        const iconHora = document.createElement("i");
+
+        pData.textContent = date;
+        pHora.textContent = hour;
+
+        iconData.classList.add("fa-calendar");
+        iconHora.classList.add("fa-clock");
+
+        addElement(div, pData);
+        addElement(div, pHora);
+        
+        addElement(pData, iconData, "fa-solid");
+        addElement(pHora, iconHora, "fa-solid");
+    }
+
+    function createButton() {
+        
+        const trash = articleElements.removeBtn;
+        const icon = document.createElement("i");
+
+        icon.classList.add("fa-trash");
+        
+        addElement(article, trash, "remove-button");
+        addElement(trash, icon, "fa-solid");
+    }
+}
+
+function addElement(parent, child, classe) {
+
+    parent.appendChild(child);
+    child.classList.add(classe);
+}
