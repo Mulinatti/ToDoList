@@ -4,12 +4,22 @@ const addButton = document.querySelector("#add-btn");
 const actualData = document.querySelector("#date");
 const section = document.querySelector("section");
 const form = document.querySelector("form");
+const erro = document.querySelector("span");
 
 addButton.addEventListener("click", (e) => {
 
     e.preventDefault();
-    createArticle(toDoText.value, actualData.value, schedule.value);
-    form.reset();
+    
+    if(toDoText.value.length && actualData.value.length && schedule.value.length > 0) {
+        
+        createArticle(toDoText.value, actualData.value, schedule.value);
+        erro.classList.add("error-message");
+        form.reset();
+    } else {
+
+        erro.classList.remove("error-message");
+    }
+
 });
 
 function createArticle(texto, date, hour) {
@@ -64,6 +74,8 @@ function createArticle(texto, date, hour) {
         addElement(article, trash, "remove-button");
         addElement(trash, icon, "fa-solid");
     }
+
+    addElement(section, article);
 }
 
 function addElement(parent, child, classe) {

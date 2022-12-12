@@ -125,6 +125,19 @@ p i{
     margin-left: 7px;
 }
 
+.error-message {
+
+    display: none;
+}
+
+span {
+
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #db4e4e;
+    text-decoration: underline;
+}
+
 
 @keyframes fromLeft {
 
