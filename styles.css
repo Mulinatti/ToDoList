@@ -89,6 +89,7 @@ article {
     justify-content: space-between;
     box-shadow: 3px 2px 2px #bdbdbd;
     animation: fromLeft 1s .3s backwards;
+    transition: all .5s;
 }
 
 .horario {
@@ -123,6 +124,7 @@ p i{
 
     text-align: center;
     margin-left: 7px;
+    pointer-events: none
 }
 
 .error-message {
@@ -138,6 +140,11 @@ span {
     text-decoration: underline;
 }
 
+.removido {
+
+    animation: remover 1s .3s backwards;
+}
+
 
 @keyframes fromLeft {
 
@@ -151,5 +158,20 @@ span {
 
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes remover {
+
+    from {
+
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    to {
+
+        opacity: 0;
+        transform: translateX(200px);
     }
 }

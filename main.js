@@ -9,17 +9,15 @@ const erro = document.querySelector("span");
 addButton.addEventListener("click", (e) => {
 
     e.preventDefault();
-    
-    if(toDoText.value.length && actualData.value.length && schedule.value.length > 0) {
         
+    if(toDoText.value.length && actualData.value.length && schedule.value.length > 0) {
         createArticle(toDoText.value, actualData.value, schedule.value);
-        erro.classList.add("error-message");
+        erro.classList.add("error-message")
         form.reset();
     } else {
 
         erro.classList.remove("error-message");
     }
-
 });
 
 function createArticle(texto, date, hour) {
